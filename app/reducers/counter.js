@@ -1,12 +1,10 @@
 // @flow
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, SET_COUNTER, TICKER_FETCH_SUCCEEDED } from '../actions/counter';
 
-export type counterStateType = {
-  +counter: number
-};
 
 type actionType = {
-  +type: string
+  +type: string,
+  +payload: any
 };
 
 export default function counter(state: number = 0, action: actionType) {
@@ -15,6 +13,9 @@ export default function counter(state: number = 0, action: actionType) {
       return state + 1;
     case DECREMENT_COUNTER:
       return state - 1;
+    case SET_COUNTER:
+    case TICKER_FETCH_SUCCEEDED:
+      return action.payload;
     default:
       return state;
   }
