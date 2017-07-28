@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NumberEasing from 'react-number-easing';
 import styles from './Counter.css';
 
-const TICKER_UPDATE_INTERVAL_MS = 3000;
+const TICKER_UPDATE_INTERVAL_MS = 10 * 1000;
 
 class Counter extends Component {
   constructor(props) {
